@@ -18,9 +18,9 @@ def post_message(message: str):
         sns = boto3.resource(
             "sns",
             endpoint_url="http://host.docker.internal:4566",
-            aws_access_key_id="test",
-            aws_secret_access_key="test",
-            region_name="us-east-1",
+            aws_access_key_id="test",  # noqa
+            aws_secret_access_key="test",  # noqa
+            region_name="us-east-1",  # noqa
         )
         sns.Topic("arn:aws:sns:us-east-1:000000000000:test-topic").publish(
             Message=message
